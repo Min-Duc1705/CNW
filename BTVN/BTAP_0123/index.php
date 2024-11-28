@@ -15,8 +15,6 @@ $products = file_exists($jsonFile) ? json_decode(file_get_contents($jsonFile), t
 </head>
 
 <body>
-<!DOCTYPE html>
-<html lang="en">
 <header>
     <nav class="logo">
         <a href="../../BTAP_0123/index.php">Administraction</a>
@@ -32,50 +30,50 @@ $products = file_exists($jsonFile) ? json_decode(file_get_contents($jsonFile), t
     </nav>
 </header>
 
-    <div class="container my-4">
-        <div class="row">
-            <div class="col-md-12 text-end mb-3">
-                <a href="./pages/products/product_add.php" class="btn btn-success">
-                    Thêm mới
-                </a>
-            </div>
-            <div class="col-md-12">
-                <table class="table table-bordered text-center">
-                    <thead class="table-light">
-                        <tr>
-                            <th>ID</th>
-                            <th>Sản phẩm</th>
-                            <th>Giá thành</th>
-                            <th>Sửa</th>
-                            <th>Xoá</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php if (!empty($products)): ?>
-                            <?php foreach ($products as $product): ?>
-                                <tr>
-                                    <td><?= $product['id'] ?></td>
-                                    <td><?= $product['name'] ?></td>
-                                    <td><?= number_format($product['price'], 0, ',', '.') ?> VND</td>
-                                    <td>
-                                    <a href="../BTAP_0123/pages/products/product_edit.php?id=<?= $product['id'] ?>" > 🖊️</a>
-
-                                    </td>
-                                    <td>
-                                        <a href="../BTAP_0123/pages/products/product_delete.php?id=<?= $product['id'] ?>"  onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')">
-                                            ✖️
-                                        </a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                    </tbody>
-                </table>
-            </div>
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-12 text-end mb-3">
+            <a href="./pages/products/product_add.php" class="btn btn-success">
+                Thêm mới
+            </a>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-bordered text-center">
+                <thead class="table-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Sản phẩm</th>
+                        <th>Giá thành</th>
+                        <th>Sửa</th>
+                        <th>Xoá</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (!empty($products)): ?>
+                        <?php foreach ($products as $product): ?>
+                            <tr>
+                                <td><?= $product['id'] ?></td>
+                                <td><?= $product['name'] ?></td>
+                                <td><?= number_format($product['price'], 0, ',', '.') ?> VND</td>
+                                <td>
+                                    <a href="../BTAP_0123/pages/products/product_edit.php?id=<?= urlencode($product['id']) ?>">🖊️</a>
+                                </td>
+                                <td>
+                                    <a href="../BTAP_0123/pages/products/product_delete.php?id=<?= urlencode($product['id']) ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')">
+                                        ✖️
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </tbody>
+            </table>
         </div>
     </div>
+</div>
 
-    <?php include(__DIR__ . '/includes/footer.php'); ?>
+<?php include(__DIR__ . '/includes/footer.php'); ?>
+
 </body>
 
 </html>
