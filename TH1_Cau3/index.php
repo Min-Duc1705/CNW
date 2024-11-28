@@ -1,28 +1,29 @@
 <?php
-// Đường dẫn tới file CSV
-$filename = "students.csv";
-
-// Mảng chứa dữ liệu sinh viên
 $sinhvien = [];
 
-// Kiểm tra file có tồn tại không
-if (!file_exists($filename)) {
-    die("File CSV không tồn tại. Vui lòng kiểm tra lại!");
-}
+// Kiểm tra nếu người dùng đã upload file
+if (isset($_FILES['fileCSV'])) {
+    $file = $_FILES['fileCSV']['tmp_name'];
 
-// Mở file CSV
-if (($handle = fopen($filename, "r")) !== FALSE) {
-    // Đọc dòng đầu tiên (tiêu đề)
-    $headers = fgetcsv($handle, 1000, ",");
+    // Kiểm tra file có hợp lệ không
+    if (is_uploaded_file($file)) {
+        // Mở file CSV
+        if (($handle = fopen($file, "r")) !== FALSE) {
+            // Đọc dòng đầu tiên (tiêu đề)
+            $headers = fgetcsv($handle, 1000, ",");
 
-    // Đọc từng dòng dữ liệu
-    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-        // Kết hợp tiêu đề với dữ liệu từng dòng
-        $sinhvien[] = array_combine($headers, $data);
+            // Đọc từng dòng dữ liệu
+            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                // Kết hợp tiêu đề với dữ liệu từng dòng
+                $sinhvien[] = array_combine($headers, $data);
+            }
+
+            // Đóng file
+            fclose($handle);
+        }
+    } else {
+        echo "<script>alert('Không thể đọc file. Vui lòng thử lại!');</script>";
     }
-
-    // Đóng file
-    fclose($handle);
 }
 ?>
 
@@ -38,6 +39,17 @@ if (($handle = fopen($filename, "r")) !== FALSE) {
 <body>
     <div class="container mt-5">
         <h1 class="text-center mb-4">Danh sách sinh viên</h1>
+        
+        <!-- Form upload file -->
+        <form method="POST" enctype="multipart/form-data" class="mb-4">
+            <div class="mb-3">
+                <label for="fileCSV" class="form-label">Chọn file CSV:</label>
+                <input type="file" class="form-control" id="fileCSV" name="fileCSV" accept=".csv" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Tải lên và hiển thị</button>
+        </form>
+
+        <!-- Hiển thị bảng danh sách sinh viên -->
         <table class="table table-bordered table-striped">
             <thead class="table-dark">
                 <tr>
@@ -63,7 +75,7 @@ if (($handle = fopen($filename, "r")) !== FALSE) {
                         echo "</tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='5' class='text-center'>Không có dữ liệu sinh viên.</td></tr>";
+                    echo "<tr><td colspan='5' class='text-center'>Chưa có dữ liệu. Vui lòng tải lên file CSV.</td></tr>";
                 }
                 ?>
             </tbody>

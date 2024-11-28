@@ -1,5 +1,5 @@
 <?php
-include dirname(__DIR__) . '/database/db.php'; // Bao gồm kết nối cơ sở dữ liệu và thông tin sản phẩm
+include dirname(__DIR__) . '../database/db.php'; // Bao gồm kết nối cơ sở dữ liệu và thông tin sản phẩm
 
 // Lấy danh sách sản phẩm
 function getProducts() {

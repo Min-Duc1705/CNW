@@ -1,5 +1,5 @@
 <?php
-include 'includes/functions.php';
+include './includes/functions.php';
 $products = getProducts();
 ?>
 

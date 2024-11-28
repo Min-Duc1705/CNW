@@ -1,20 +1,34 @@
-Câu 1: Đây là câu hỏi đầu tiên?
-A. Đáp án A
-B. Đáp án B
-C. Đáp án C
-D. Đáp án D
-Đáp án: A
-
-Câu 2: Đây là câu hỏi thứ hai?
-A. Đáp án A
-B. Đáp án B
-C. Đáp án C
-D. Đáp án D
+Câu 1: Thành phần nào sau đây KHÔNG phải là một thành phần giao diện người dùng (UI) trong Android?
+A. TextView
+B. Button
+C. Service
+D. ImageView
 Đáp án: C
 
-Câu 3: Đây là câu hỏi thứ hai?
-A. Đáp án A
-B. Đáp án B
-C. Đáp án C
-D. Đáp án D
-Đáp án: D
+Câu 2: Layout nào thường được sử dụng để sắp xếp các thành phần UI theo chiều dọc hoặc chiều ngang?
+A. RelativeLayout
+B. LinearLayout
+C. FrameLayout
+D. ConstraintLayout
+Đáp án: B
+
+Câu 3: Intent trong Android được sử dụng để làm gì?
+A. Hiển thị thông báo cho người dùng.
+B. Lưu trữ dữ liệu.
+C. Khởi chạy Activity.
+D. Xử lý sự kiện chạm.
+Đáp án: C
+
+Câu 4:Vòng đời của một Activity bắt đầu bằng phương thức nào?
+A. onStart()
+B. onResume()
+C. onCreate()
+D. onPause()
+Đáp án: C
+
+Câu 5: Để xử lý sự kiện click chuột cho một Button, bạn cần sử dụng phương thức nào?
+A. onClick()
+B. onTouch()
+C. onLongClick()
+D. onFocusChange()
+Đáp án: A

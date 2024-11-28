@@ -1,0 +1,73 @@
+/* style.css */
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+nav li a:hover {
+    color: teal;
+    background-color: rgb(0, 187, 255);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    padding: 10px;
+    border-radius: 5px ;
+}
+.logo {
+    font-size: 18px;
+    margin-left: 10px;
+    padding: 10;
+
+    
+}
+.logo a{
+    font-weight: bold;
+}
+ header{
+    display: flex;
+    padding: 20px;
+    border-bottom: 5px solid darkgreen ;
+ }
+nav ul {
+    font-size: 18px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+button{
+    background-color:chartreuse;
+    border-radius: 10px;
+    border-color:#ddd ;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+footer{
+    font-size: 20px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 100px;
+    width: 100%;
+    border-top: 2px solid black;
+    font-weight: bold;
+}
