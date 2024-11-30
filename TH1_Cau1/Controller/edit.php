@@ -1,5 +1,5 @@
 <?php
-include './functions.php';
+include '../Models/functions.php';
 
 // Lấy id hoa từ URL
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Cập nhật thông tin vào hoa theo id
     if (updateFlower($id, $name, $description, $image)) {
         // Quay lại trang admin.php sau khi cập nhật
-        header("Location: admin.php");
+        header("Location: ../View/Admin/admin.php");
         exit();
     } else {
         echo "Có lỗi xảy ra khi cập nhật thông tin hoa.";
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sửa thông tin hoa</title>
     <!-- Thêm link tới Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>

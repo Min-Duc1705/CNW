@@ -1,4 +1,4 @@
-<?php include './functions.php';
+<?php include __DIR__ . '/../../Models/functions.php';
 $flowers = getFlowers();
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ $flowers = getFlowers();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh sách các loại hoa</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
 </head>
 <style>
     body {
@@ -59,15 +59,15 @@ $flowers = getFlowers();
 <body > 
 <header>
         <nav class="logo">
-            <a href="./admin.php">Administraction</a>
+            <a href="../Admin/admin.php">Administraction</a>
         </nav>
         <nav>
             <ul>
-                <li><a href="../index.php">Trang chủ</a></li>
-                <li><a href="./index.php">User</a></li>
-                <li><a href="#">Thể loại</a></li>
-                <li><a href="#">Tác giả</a></li>
-                <li><a href="#">Bài Viết</a></li>
+                <li><a href="../User/index.php">Trang chủ</a></li>
+                <li><a href="../User/index.php">User</a></li>
+                <li><a href="../User/index.php">Thể loại</a></li>
+                <li><a href="../User/index.php">Tác giả</a></li>
+                <li><a href="../User/index.php">Bài Viết</a></li>
             </ul>
         </nav>
     </header>

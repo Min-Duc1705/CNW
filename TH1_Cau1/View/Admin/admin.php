@@ -1,5 +1,5 @@
  <?php
-    include './functions.php';
+    include __DIR__ . '/../../Models/functions.php';
     $flowers = getFlowers();
     ?>
  <!DOCTYPE html>
@@ -10,7 +10,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Quản trị danh sách hoa</title>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-     <link rel="stylesheet" href="./style.css">
+     <link rel="stylesheet" href="../../public/css/style.css">
  </head>
  <style>
      img {
@@ -31,15 +31,15 @@
          </nav>
          <nav>
              <ul>
-                 <li><a href="../index.php">Trang chủ</a></li>
-                 <li><a href="./index.php">User</a></li>
-                 <li><a href="./index.php">Thể loại</a></li>
-                 <li><a href="./index.php">Tác giả</a></li>
-                 <li><a href="./index.php">Bài Viết</a></li>
+                 <li><a href="../User/index.php">Trang chủ</a></li>
+                 <li><a href="../User/index.php">User</a></li>
+                 <li><a href="../User/index.php">Thể loại</a></li>
+                 <li><a href="../User/index.php">Tác giả</a></li>
+                 <li><a href="../User/index.php">Bài Viết</a></li>
              </ul>
          </nav>
      </header>
-     <button type="button" class="btn btn-warning" style="margin-left: 10px;"><a href="./add.php">Thêm loại </a></button>
+     <button type="button" class="btn btn-warning" style="margin-left: 10px;"><a href="../../Controller/add.php">Thêm loại </a></button>
      <table class="table table-striped">
          <thead>
              <tr>
@@ -56,8 +56,8 @@
                      <td><?php echo htmlspecialchars($flower['description']); ?></td>
                      <td><img src="<?php echo htmlspecialchars($flower['image']); ?>" alt="<?php echo htmlspecialchars($flower['name']); ?>"></td>
                      <td>
-                         <a href="edit.php?id=<?php echo $flower['id']; ?>">🖊️</a>
-                         <a href="delete.php?id=<?php echo $flower['id']; ?>" onclick="return confirm('Bạn có chắc muốn xóa không?')">❌</a>
+                         <a href="../../Controller/edit.php?id=<?php echo $flower['id']; ?>">🖊️</a>
+                         <a href="../../Controller/delete.php?id=<?php echo $flower['id']; ?>" onclick="return confirm('Bạn có chắc muốn xóa không?')">❌</a>
                      </td>
                  </tr>
              <?php endforeach; ?>
