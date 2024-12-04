@@ -81,7 +81,7 @@
 
     .login-form .btn,
     .login-form .btn:active {
-        background: #4aba70 !important;
+        background: #42ae68 !important;
         border: none;
         line-height: normal;
     }
@@ -109,7 +109,7 @@
     }
 
     .login-form a {
-        color: #4aba70;
+        color: #42ae68;
     }
     </style>
 </head>
