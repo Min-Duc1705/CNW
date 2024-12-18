@@ -45,6 +45,7 @@ Routes được định nghĩa trong routes/web.php cho web hoặc routes/api.ph
 1. Tạo dự án Laravel
 Chạy lệnh tạo dự án:
 <!-- BASH 
+composer global require laravel/installer
 laravel new lr-project
  -->
 2. Tạo CSDL
